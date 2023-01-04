@@ -38,7 +38,8 @@ jobs:
       - name: Download a Build Artifact
         run: gh run download -R wadoon/key-playground $RUN_ID -n javadoc
       - name: Unpack
-        run: tar xvf javadoc.tar.bz2
+        run: tar xf javadoc.tar.bz2
+      - run: mv build/docs/javadoc public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
